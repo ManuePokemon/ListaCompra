@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -33,8 +34,9 @@ public class ProductoControlador {
         productoServicio.save(producto);
         return "redirect:/";
     }
-    @GetMapping("/editarProducto")
-    public String formularioEditar(Model model, long id) {
+    @GetMapping("/editarProducto{id}")
+    public String formularioEditar(Model model, @PathVariable long id) {
+
         model.addAttribute("producto", productoServicio.findById(id));
         return "editarProducto";
     }
