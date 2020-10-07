@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Nuevo producto</h1>
+<form method="post" action="#"
+      th:action="@{/editarProducto}"
+      th:object="${producto}">
+
+    <input type="hidden"
+           id="id"
+           th:field="*{id}" />
+
+    <input type="text"
+           id="nombre" placeholder="Nombre"
+           th:field="*{nombre}" />
+
+    <input type="number"
+           id="precio" placeholder="1.0"
+           th:field="*{precio}" />
+
+    <input type="number"
+           id="unidadesEnStock" placeholder="1"
+           th:field="*{unidadesEnStock}" />
+
+    <input type="text"
+           id="observacion" placeholder="Observacion"
+           th:field="*{observacion}" />
+
+    <input type="submit"
+           value="Enviar" />
+
+</form>
+</body>
+</html>

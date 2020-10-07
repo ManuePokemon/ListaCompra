@@ -22,5 +22,6 @@ public class Producto {
     private double precio;
     private int unidadesEnStock;
     private String observacion;
+    private boolean estaEnCesta;
 
 }
